@@ -1,0 +1,35 @@
+$dark-shade100: #1f2041;
+$dark-shade75: adjust-color($dark-shade100, $alpha: -0.25);
+$dark-shade50: adjust-color($dark-shade100, $alpha: -0.5);
+$dark-shade25: adjust-color($dark-shade100, $alpha: -0.75);
+$dark-shade5: adjust-color($dark-shade100, $alpha: -0.95);
+$purple: #bc9cff;
+$green: #6fcf97;
+
+.color-square {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+
+  &_dark-shade100 {
+    background-color: $dark-shade100;
+  }
+  &_dark-shade75 {
+    background-color: $dark-shade75;
+  }
+  &_dark-shade50 {
+    background-color: $dark-shade50;
+  }
+  &_dark-shade25 {
+    background-color: $dark-shade25;
+  }
+  &_dark-shade5 {
+    background-color: $dark-shade5;
+  }
+  &_purple {
+    background-color: $purple;
+  }
+  &_green {
+    background-color: $green;
+  }
+}
