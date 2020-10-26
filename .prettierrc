@@ -1,0 +1,22 @@
+{
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": ["*.scss"],
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": ["*.pug"],
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
+}
