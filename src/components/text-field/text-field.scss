@@ -1,0 +1,19 @@
+.text-field {
+  &__label {
+  }
+
+  &__input {
+    box-sizing: border-box;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    padding: 13px 15px;
+    width: 320px;
+    font-size: 1rem;
+    line-height: 1.3em;
+    color: rgba(31, 32, 65, 0.75);
+
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);
+    }
+  }
+}
