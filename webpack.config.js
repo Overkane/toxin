@@ -3,11 +3,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// const PAGES_DIR = "src/pages/";
-// const PAGES = fs
-//   .readdirSync(PAGES_DIR)
-//   .filter((fileName) => fileName.endsWith(".pug"));
-
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -18,6 +13,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    alias: {
+      Includes: path.resolve(__dirname, 'src/_includes/'),
+      Layouts: path.resolve(__dirname, 'src/_layouts/'),
+      Components: path.resolve(__dirname, 'src/components/'),
+      Utilities: path.resolve(__dirname, 'src/_utilities/'),
+    },
   },
   module: {
     rules: [
@@ -69,13 +72,10 @@ module.exports = {
       filename: 'ui-kit/colors-type.html',
       template: './src/pages/ui-kit/colors-type.pug',
     }),
-    // ...PAGES.map(
-    //   (page) =>
-    //     new HtmlWebpackPlugin({
-    //       template: `${PAGES_DIR}/${page}`,
-    //       filename: `./${page.replace(/\.pug/, ".html")}`,
-    //     })
-    // ),
+    new HTMLWebpackPlugin({
+      filename: 'ui-kit/form-elements.html',
+      template: './src/pages/ui-kit/form-elements.pug',
+    }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
