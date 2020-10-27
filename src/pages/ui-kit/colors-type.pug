@@ -4,54 +4,44 @@ block content
   include ../../blocks/color-square/color-square.pug
 
   .main
-    .left
-      ul.color-list
-        li.color-list__item
-          +color-square('dark-shade100')
-          .color-list__color-description
-            .color-list__color-name.h2-text Dark Shade 100%
-            .color-list__color-hex-code #1F2041
-        li.color-list__item
-          +color-square('dark-shade75')
-          .color-list__color-description
-            .color-list__color-name.h2-text Dark Shade 75%
-            .color-list__color-hex-code #1F2041
-        li.color-list__item
-          +color-square('dark-shade50') 
-          .color-list__color-description
-            .color-list__color-name.h2-text Dark Shade 50%
-            .color-list__color-hex-code #1F2041
-        li.color-list__item
-          +color-square('dark-shade25') 
-          .color-list__color-description
-            .color-list__color-name.h2-text Dark Shade 25%
-            .color-list__color-hex-code #1F2041
-        li.color-list__item
-          +color-square('dark-shade5') 
-          .color-list__color-description
-            .color-list__color-name.h2-text Dark Shade 5%
-            .color-list__color-hex-code #1F2041
-        li.color-list__item
-          +color-square('purple')
-          .color-list__color-description
-            .color-list__color-name.h2-text Purple
-            .color-list__color-hex-code #BC9CFF
-        li.color-list__item
-          +color-square('green')
-          .color-list__color-description
-            .color-list__color-name.h2-text Green
-            .color-list__color-hex-code #6FCF97
-    .right
-      ul.style-list
-        li.style-list__item 
-          .h1-text.style-list__tag-name H1
-          .h1-text This one is the sub-section or widget title
-        li.style-list__item
-          .h2-text.style-list__tag-name H2
-          .h2-text Next one is the item title inside widgets
-        li.style-list__item
-          .h3-text.style-list__tag-name H3
-          .h3-text This is a label or CTA text
-        li.style-list__item
-          .style-list__tag-name Body
-          div This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    .color-table
+      +color-square('dark-shade100')
+      .color-table__color-description
+        .color-table__color-name.h2-text Dark Shade 100%
+        .color-table__color-hex-code #1F2041
+      +color-square('dark-shade75')
+      .color-table__color-description
+        .color-table__color-name.h2-text Dark Shade 75%
+        .color-table__color-hex-code #1F2041
+      +color-square('dark-shade50') 
+      .color-table__color-description
+        .color-table__color-name.h2-text Dark Shade 50%
+        .color-table__color-hex-code #1F2041
+      +color-square('dark-shade25') 
+      .color-table__color-description
+        .color-table__color-name.h2-text Dark Shade 25%
+        .color-table__color-hex-code #1F2041
+      +color-square('dark-shade5') 
+      .color-table__color-description
+        .color-table__color-name.h2-text Dark Shade 5%
+        .color-table__color-hex-code #1F2041
+      +color-square('purple')
+      .color-table__color-description
+        .color-table__color-name.h2-text Purple
+        .color-table__color-hex-code #BC9CFF
+      +color-square('green')
+      .color-table__color-description
+        .color-table__color-name.h2-text Green
+        .color-table__color-hex-code #6FCF97
+    .style-table
+      .h1-text.style-table__tag-name H1
+      .h1-text This one is the sub-section or widget title
+      .h2-text.style-table__tag-name H2
+      .h2-text Next one is the item title inside widgets
+      .h3-text.style-table__tag-name H3
+      .h3-text This is a label or CTA text
+      .style-table__tag-name Body
+      div 
+        | This is the body text which is used for most
+        br
+        | of the design, like paragraphs, lists, etc.

@@ -1,3 +1,5 @@
+@import '~normalize.css/normalize.css';
+
 @font-face {
   font-family: 'Open Sans';
   src: url('./fonts/OpenSans-Bold.woff2') format('woff2'),
@@ -46,12 +48,6 @@ html {
   color: rgba(31, 32, 65, 0.75);
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
 .h1-text {
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
@@ -85,26 +81,17 @@ ul {
 
 .main {
   display: flex;
-  margin-top: 67px;
-  margin-right: auto;
-  width: 1440px;
-  padding-left: 150px;
-  padding-right: 150px;
+  margin: 67px 191px 0 150px;
 }
 
-.color-list {
-  &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.color-table {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-gap: 20px 40px;
+  align-items: center;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__color-description {
-    margin-left: 40px;
+  &__color-name {
+    line-height: 1.5em;
   }
 
   &__color-hex-code {
@@ -112,7 +99,7 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 19px;
-    line-height: 29px;
+    line-height: 1.5em;
     display: flex;
     align-items: center;
     /* Dark 100% */
@@ -120,23 +107,17 @@ ul {
   }
 }
 
-.right {
-  margin-left: 427px;
-}
-
-.style-list {
-  &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+.style-table {
+  display: grid;
+  grid-template-columns: 37px 1fr;
+  grid-gap: 50px 30px;
+  align-content: flex-start;
+  margin-left: 422px;
+  width: 415px;
 
   &__tag-name {
-    margin-right: 30px;
+    text-align: right;
+    font-family: Montserrat, sans-serif;
     font-weight: normal;
     color: rgba(31, 32, 65, 0.25);
   }
