@@ -1,0 +1,29 @@
+@use '~Utilities/colors';
+
+.color-square {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+
+  &_dark-shade100 {
+    background-color: colors.$dark-shade100;
+  }
+  &_dark-shade75 {
+    background-color: colors.$dark-shade75;
+  }
+  &_dark-shade50 {
+    background-color: colors.$dark-shade50;
+  }
+  &_dark-shade25 {
+    background-color: colors.$dark-shade25;
+  }
+  &_dark-shade5 {
+    background-color: colors.$dark-shade5;
+  }
+  &_purple {
+    background-color: colors.$purple;
+  }
+  &_green {
+    background-color: colors.$green;
+  }
+}

@@ -1,65 +1,30 @@
-@import '~normalize.css/normalize.css';
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('./fonts/OpenSans-Bold.woff2') format('woff2'),
-    url('./fonts/OpenSans-Bold.woff') format('woff'),
-    url('./fonts/OpenSans-Bold.ttf') format('truetype'),
-    url('./fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('./fonts/OpenSans-Regular.woff') format('woff'),
-    url('./fonts/OpenSans-Regular.ttf') format('truetype'),
-    url('./fonts/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-Bold.woff2') format('woff2'),
-    url('./fonts/Montserrat-Bold.woff') format('woff'),
-    url('./fonts/Montserrat-Bold.ttf') format('truetype'),
-    url('./fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Montserrat';
-  src: url('./fonts/Montserrat-Regular.woff2') format('woff2'),
-    url('./fonts/Montserrat-Regular.woff') format('woff'),
-    url('./fonts/Montserrat-Regular.ttf') format('truetype'),
-    url('./fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+@use '~Utilities/colors';
+@use '~Utilities/fonts';
+@import 'normalize.css';
 
 html {
-  font-family: Montserrat, sans-serif;
+  font-family: fonts.$montserrat;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   /* or 171% */
   /* Dark 75% */
-  color: rgba(31, 32, 65, 0.75);
+  color: colors.$dark-shade75;
 }
 
 .h1-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: fonts.$open-sans;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   /* Dark 100% */
-  color: #1f2041;
+  color: colors.$dark-shade100;
 }
 
 .h2-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: fonts.$open-sans;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -69,19 +34,26 @@ html {
 }
 
 .h3-text {
-  font-family: Montserrat, sans-serif;
+  font-family: fonts.$montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   /* identical to box height */
   text-transform: uppercase;
-  color: #1f2041;
+  color: colors.$dark-shade100;
 }
 
-.main {
+.colors-type-container {
   display: flex;
-  margin: 67px 191px 0 150px;
+  margin-top: 67px;
+  margin-left: 150px;
+}
+
+.form-elements-container {
+  display: flex;
+  margin-top: 62px;
+  margin-left: 140px;
 }
 
 .color-table {
@@ -95,7 +67,7 @@ html {
   }
 
   &__color-hex-code {
-    font-family: 'Open Sans', sans-serif;
+    font-family: fonts.$open-sans;
     font-style: normal;
     font-weight: normal;
     font-size: 19px;
@@ -103,7 +75,7 @@ html {
     display: flex;
     align-items: center;
     /* Dark 100% */
-    color: #1f2041;
+    color: colors.$dark-shade100;
   }
 }
 
@@ -117,8 +89,8 @@ html {
 
   &__tag-name {
     text-align: right;
-    font-family: Montserrat, sans-serif;
+    font-family: fonts.$montserrat;
     font-weight: normal;
-    color: rgba(31, 32, 65, 0.25);
+    color: colors.$dark-shade25;
   }
 }

@@ -1,9 +1,9 @@
-extends ../../_layouts/ui-kit-default.pug
+extends ~Layouts/ui-kit-default.pug
 
 block content
-  include ../../blocks/color-square/color-square.pug
+  include ~Components/color-square/color-square.pug
 
-  .main
+  .colors-type-container
     .color-table
       +color-square('dark-shade100')
       .color-table__color-description
