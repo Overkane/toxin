@@ -70,11 +70,11 @@ module.exports = {
     // Use HTMLWebpackPLugin with template set to our pug template.
     new HTMLWebpackPlugin({
       filename: 'ui-kit/colors-type.html',
-      template: './src/pages/ui-kit/colors-type.pug',
+      template: './src/pages/ui-kit/colors-type/colors-type.pug',
     }),
     new HTMLWebpackPlugin({
       filename: 'ui-kit/form-elements.html',
-      template: './src/pages/ui-kit/form-elements.pug',
+      template: './src/pages/ui-kit/form-elements/form-elements.pug',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
