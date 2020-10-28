@@ -8,4 +8,5 @@ import 'Components/checkbox/checkbox-flag.svg';
 import 'Includes/ui-kit-header/ui-kit-header.scss';
 import 'Includes/ui-kit-header/logo.svg';
 import 'Pages/ui-kit/form-elements/form-elements.scss';
+import 'Pages/ui-kit/colors-type/colors-type.scss';
 import './styles.scss';
