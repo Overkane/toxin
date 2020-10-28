@@ -1,44 +1,47 @@
 extends ~Layouts/ui-kit-default.pug
 include ~Components/color-square/color-square.pug
+include ~Components/h1/h1.pug
+include ~Components/h2/h2.pug
+include ~Components/h3/h3.pug
 
 block content
   .colors-type-container
     .color-table
       +color-square('dark-shade100')
       .color-table__color-description
-        .color-table__color-name.h2-text Dark Shade 100%
+        +h2('color-table__color-name') Dark Shade 100%
         .color-table__color-hex-code #1F2041
       +color-square('dark-shade75')
       .color-table__color-description
-        .color-table__color-name.h2-text Dark Shade 75%
+        +h2('color-table__color-name') Dark Shade 75%
         .color-table__color-hex-code #1F2041
       +color-square('dark-shade50') 
       .color-table__color-description
-        .color-table__color-name.h2-text Dark Shade 50%
+        +h2('color-table__color-name') Dark Shade 50%
         .color-table__color-hex-code #1F2041
       +color-square('dark-shade25') 
       .color-table__color-description
-        .color-table__color-name.h2-text Dark Shade 25%
+        +h2('color-table__color-name') Dark Shade 25%
         .color-table__color-hex-code #1F2041
       +color-square('dark-shade5') 
       .color-table__color-description
-        .color-table__color-name.h2-text Dark Shade 5%
+        +h2('color-table__color-name') Dark Shade 5%
         .color-table__color-hex-code #1F2041
       +color-square('purple')
       .color-table__color-description
-        .color-table__color-name.h2-text Purple
+        +h2('color-table__color-name') Purple
         .color-table__color-hex-code #BC9CFF
       +color-square('green')
       .color-table__color-description
-        .color-table__color-name.h2-text Green
+        +h2('color-table__color-name') Green
         .color-table__color-hex-code #6FCF97
     .style-table
-      .h1-text.style-table__tag-name H1
-      .h1-text This one is the sub-section or widget title
-      .h2-text.style-table__tag-name H2
-      .h2-text Next one is the item title inside widgets
-      .h3-text.style-table__tag-name H3
-      .h3-text This is a label or CTA text
+      +h1('style-table__tag-name') H1
+      +h1 This one is the sub-section or widget title
+      +h2('style-table__tag-name') H2
+      +h2 Next one is the item title inside widgets
+      +h3('style-table__tag-name') H3
+      +h3 This is a label or CTA text
       .style-table__tag-name Body
       div 
         | This is the body text which is used for most

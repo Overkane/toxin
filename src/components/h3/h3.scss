@@ -1,0 +1,12 @@
+@use '~Utilities/colors';
+@use '~Utilities/fonts';
+
+.h3 {
+  font-family: fonts.$montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: colors.$dark-shade100;
+}

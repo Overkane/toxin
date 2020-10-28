@@ -1,0 +1,5 @@
+mixin h2(additional_classes='')
+  if additional_classes !== ''
+    - var additional_classes = " " + additional_classes;
+  div(class="h2" + additional_classes)
+    block

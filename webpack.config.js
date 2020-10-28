@@ -20,6 +20,7 @@ module.exports = {
       Layouts: path.resolve(__dirname, 'src/_layouts/'),
       Components: path.resolve(__dirname, 'src/components/'),
       Utilities: path.resolve(__dirname, 'src/_utilities/'),
+      Fonts: path.resolve(__dirname, 'src/fonts/'),
     },
   },
   module: {
@@ -34,7 +35,12 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'resolve-url-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -67,7 +73,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    // Use HTMLWebpackPLugin with template set to our pug template.
     new HTMLWebpackPlugin({
       filename: 'ui-kit/colors-type.html',
       template: './src/pages/ui-kit/colors-type/colors-type.pug',
