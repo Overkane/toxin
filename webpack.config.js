@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       Includes: path.resolve(__dirname, 'src/_includes/'),
       Layouts: path.resolve(__dirname, 'src/_layouts/'),
+      Pages: path.resolve(__dirname, 'src/pages/'),
       Components: path.resolve(__dirname, 'src/components/'),
       Utilities: path.resolve(__dirname, 'src/_utilities/'),
       Fonts: path.resolve(__dirname, 'src/fonts/'),

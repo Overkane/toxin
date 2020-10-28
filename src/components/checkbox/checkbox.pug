@@ -1,0 +1,13 @@
+include ~Components/h3/h3.pug
+
+mixin checkbox-group(title='Default title')
+  fieldset
+    +h3
+      legend= title
+    block
+
+mixin checkbox(id, name, checked=false)
+  .checkbox
+    input.checkbox__input(id=id, name=name, type='checkbox', checked=checked)
+    label.checkbox__label(for=id) 
+      block

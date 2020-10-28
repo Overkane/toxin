@@ -11,22 +11,20 @@ html {
   color: colors.$dark-shade75;
 }
 
+input:focus {
+  outline: none;
+}
+
 .colors-type-container {
   display: flex;
   margin-top: 67px;
   margin-left: 150px;
 }
 
-.form-elements-container {
-  display: flex;
-  margin-top: 62px;
-  margin-left: 140px;
-}
-
 .color-table {
   display: grid;
   grid-template-columns: 70px 1fr;
-  grid-gap: 20px 40px;
+  gap: 20px 40px;
   align-items: center;
 
   &__color-name {
@@ -49,7 +47,7 @@ html {
 .style-table {
   display: grid;
   grid-template-columns: 37px 1fr;
-  grid-gap: 50px 30px;
+  gap: 50px 30px;
   align-content: flex-start;
   margin-left: 422px;
   width: 415px;

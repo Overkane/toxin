@@ -1,19 +1,29 @@
+@use 'Utilities/colors';
+
 .text-field {
   &__label {
   }
 
   &__input {
     box-sizing: border-box;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    margin-top: 5px;
+    border: 1px solid colors.$dark-shade25;
     border-radius: 4px;
     padding: 13px 15px;
     width: 320px;
     font-size: 1rem;
-    line-height: 1.3em;
-    color: rgba(31, 32, 65, 0.75);
+    line-height: 18px;
+    color: colors.$dark-shade75;
+
+    &:focus,
+    &:hover,
+    &_focused {
+      border: 1px solid colors.$dark-shade50;
+      border-radius: 4px;
+    }
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.25);
+      color: colors.$dark-shade25;
     }
   }
 }

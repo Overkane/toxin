@@ -1,11 +1,20 @@
 extends ~Layouts/ui-kit-default.pug
+include ~Components/text-field/text-field.pug
+include ~Components/checkbox/checkbox.pug
 
 block content
-  include ~Components/text-field/text-field.pug
+  div(style='position: absolute;left: 141px;top: 140px;')
+    +text-field('text-field', 'Text field', 'Email')
+  div(style='position: absolute;left: 141px;top: 227px;')
+    +text-field-focused('text-field-focused', 'Text field', 'Email', 'This is pretty awesome')
 
-  .form-elements-container
-    .left-col
-      +text-field('Text field', 'Email')
+  div(style='position: absolute;left: 141px;top: 395px;')
+    +text-field('text-field-masked', 'Masked text field', 'ДД.ММ.ГГГГ')
+  div(style='position: absolute;left: 587px;top: 143px;')
+    +checkbox-group('Checkbox buttons')
+      +checkbox('allowSmoking', 'allowSmoking') Можно курить
+      +checkbox('allowPets', 'allowPets', true) Можно с питомцами
+      +checkbox('allowGuests', 'allowGuests', true) Можно пригласить гостей (до 10 человек)
     //-   .text-field.text-field_focus
     //-   .dropdown
     //-   .text-field.text-field_masked
