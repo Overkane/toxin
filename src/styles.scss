@@ -1,14 +1,10 @@
 @use '~Utilities/colors';
 @use '~Utilities/fonts';
+@use '~Utilities/mixins';
 @import 'normalize.css';
 
 html {
-  font-family: fonts.$montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: colors.$dark-shade75;
+  @include mixins.body;
 }
 
 input:focus {

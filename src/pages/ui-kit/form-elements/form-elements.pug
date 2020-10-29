@@ -1,20 +1,57 @@
 extends ~Layouts/ui-kit-default.pug
 include ~Components/text-field/text-field.pug
-include ~Components/checkbox/checkbox.pug
+include ~Components/checkbox-list/checkbox-list.pug
 
 block content
   div(style='position: absolute;left: 141px;top: 140px;')
-    +text-field('text-field', 'Text field', 'Email')
+    -
+      const textField = {
+        id: 'text-field',
+        label: 'Text field',
+        placeholder: 'Email'
+      }
+    +text-field(textField)
   div(style='position: absolute;left: 141px;top: 227px;')
-    +text-field-focused('text-field-focused', 'Text field', 'Email', 'This is pretty awesome')
-
+    -
+      const textFieldFocused = {
+        id: 'text-field-focused',
+        label: 'Text field',
+        placeholder: 'Email'
+      }
+    +text-field-focused(textField)
   div(style='position: absolute;left: 141px;top: 395px;')
-    +text-field('text-field-masked', 'Masked text field', 'ДД.ММ.ГГГГ')
+    -
+      const textFieldMasked = {
+        id: 'text-field-masked',
+        label: 'Masked text field',
+        placeholder: 'ДД.ММ.ГГГГ'
+      }
+    +text-field(textFieldMasked)
   div(style='position: absolute;left: 587px;top: 143px;')
-    +checkbox-group('Checkbox buttons')
-      +checkbox('allowSmoking', 'allowSmoking') Можно курить
-      +checkbox('allowPets', 'allowPets', true) Можно с питомцами
-      +checkbox('allowGuests', 'allowGuests', true) Можно пригласить гостей (до 10 человек)
+    -
+      checkboxList = [
+      {
+        name: 'allowSmoking',
+        label: 'Можно курить',  
+        checked: false 
+        },
+      { 
+        name: 'allowPets', 
+        label: 'Можно с питомцами', 
+        checked: true 
+        },
+      { 
+        name: 'allowGuests', 
+        label: 'Можно пригласить гостей (до 10 человек)', 
+        checked: true 
+        }
+      ];
+    .checkbox-list-wrapper
+      +checkbox-list('Checkbox buttons', checkboxList)
+    //- +checkbox-group('Checkbox buttons')
+    //-   +checkbox('allowSmoking') Можно курить
+    //-   +checkbox('allowPets', true) Можно с питомцами
+    //-   +checkbox('allowGuests', true) Можно пригласить гостей (до 10 человек)
     //-   .text-field.text-field_focus
     //-   .dropdown
     //-   .text-field.text-field_masked

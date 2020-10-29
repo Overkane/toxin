@@ -1,5 +1,6 @@
 @use '~Utilities/colors';
 @use '~Utilities/fonts';
+@use '~Utilities/mixins';
 
 .colors-type-container {
   display: flex;
@@ -14,19 +15,16 @@
   align-items: center;
 
   &__color-name {
+    @include mixins.h2-text;
     line-height: 1.5em;
   }
 
   &__color-hex-code {
-    font-family: fonts.$open-sans;
-    font-style: normal;
+    @include mixins.h2-text;
     font-weight: normal;
-    font-size: 19px;
     line-height: 1.5em;
     display: flex;
     align-items: center;
-    /* Dark 100% */
-    color: colors.$dark-shade100;
   }
 }
 
@@ -38,10 +36,41 @@
   margin-left: 422px;
   width: 415px;
 
-  &__tag-name {
+  @mixin tag-name {
     text-align: right;
     font-family: fonts.$montserrat;
     font-weight: normal;
     color: colors.$dark-shade25;
+  }
+
+  .style-table__h1-tag-name {
+    @include mixins.h1-text;
+    @include tag-name;
+  }
+  .style-table__h1-tag-example {
+    @include mixins.h1-text;
+  }
+
+  .style-table__h2-tag-name {
+    @include mixins.h2-text;
+    @include tag-name;
+  }
+  .style-table__h2-tag-example {
+    @include mixins.h2-text;
+  }
+
+  .style-table__h3-tag-name {
+    @include mixins.h3-text;
+    @include tag-name;
+  }
+  .style-table__h3-tag-example {
+    @include mixins.h3-text;
+  }
+
+  .style-table__body-tag-name {
+    @include tag-name;
+  }
+  .style-table__body-tag-example {
+    // Inherited from html
   }
 }

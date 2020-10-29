@@ -1,23 +1,19 @@
-include ~Components/h3/h3.pug
-
-mixin text-field(id, label_name='default', placeholder='', value='')
+mixin text-field(textField={})
   .text-field
-    +h3
-      label.text-field__label(for=id)= label_name
+    label.text-field__label(for=textField.id)= textField.label
     input.text-field__input(
-      id=id,
       type='text',
-      placeholder=placeholder,
-      value=value
+      id=textField.id,
+      placeholder=textField.placeholder,
+      value=textField.value
     )
 
-mixin text-field-focused(id, label_name='default', placeholder='', value='')
+mixin text-field-focused(textField={})
   .text-field
-    +h3
-      label.text-field__label(for=id)= label_name
+    label.text-field__label(for=textField.id)= textField.label
     input.text-field__input.text-field__input_focused(
-      id=id,
       type='text',
-      placeholder=placeholder,
-      value=value
+      id=textField.id,
+      placeholder=textField.placeholder,
+      value=textField.value
     )

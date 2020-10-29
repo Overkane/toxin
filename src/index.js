@@ -1,10 +1,8 @@
 import 'Components/color-square/color-square.scss';
 import 'Components/text-field/text-field.scss';
-import 'Components/h1/h1.scss';
-import 'Components/h2/h2.scss';
-import 'Components/h3/h3.scss';
 import 'Components/checkbox/checkbox.scss';
 import 'Components/checkbox/checkbox-flag.svg';
+import 'Components/checkbox-list/checkbox-list.scss';
 import 'Includes/ui-kit-header/ui-kit-header.scss';
 import 'Includes/ui-kit-header/logo.svg';
 import 'Pages/ui-kit/form-elements/form-elements.scss';

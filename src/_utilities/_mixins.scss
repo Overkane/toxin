@@ -1,0 +1,40 @@
+@use '~Utilities/colors';
+@use '~Utilities/fonts';
+
+@mixin h1-text {
+  font-family: fonts.$open-sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: colors.$dark-shade100;
+}
+
+@mixin h2-text {
+  font-family: fonts.$open-sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: colors.$dark-shade100;
+}
+
+@mixin h3-text {
+  font-family: fonts.$montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: colors.$dark-shade100;
+}
+
+@mixin body {
+  font-family: fonts.$montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: none;
+  color: colors.$dark-shade75;
+}

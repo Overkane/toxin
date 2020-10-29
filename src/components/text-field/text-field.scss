@@ -1,7 +1,9 @@
 @use 'Utilities/colors';
+@use 'Utilities/mixins';
 
 .text-field {
   &__label {
+    @include mixins.h3-text;
   }
 
   &__input {

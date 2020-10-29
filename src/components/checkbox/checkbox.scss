@@ -1,27 +1,12 @@
 @use 'Utilities/colors';
-
-.checkbox-group {
-  // margin-bottom: 17px;
-}
+@use 'Utilities/mixins';
 
 .checkbox {
   &__label {
+    @include mixins.body;
     display: inline-flex;
     align-items: center;
     user-select: none;
-
-    &::before {
-      content: '';
-      flex: 0 0 auto;
-      display: inline-block;
-      margin-right: 10px;
-      border: 1px solid colors.$dark-shade25;
-      border-radius: 4px;
-      width: 20px;
-      height: 20px;
-      background-repeat: no-repeat;
-      background-position: center 40%;
-    }
   }
 
   &__input {
@@ -29,12 +14,25 @@
     opacity: 0;
   }
 
-  &__input:checked + &__label::before {
+  &__box {
+    content: '';
+    flex: 0 0 auto;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid colors.$dark-shade25;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+  }
+
+  &__input:checked + &__box {
     border: 1px solid colors.$purple;
     background-image: url('checkbox-flag.svg');
   }
 
-  &__input:hover + &__label::before {
+  &__input:hover + &__box {
     border: 1px solid colors.$purple;
   }
 }

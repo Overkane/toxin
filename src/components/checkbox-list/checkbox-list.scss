@@ -1,0 +1,6 @@
+@use 'Utilities/mixins';
+
+.checkbox-list {
+  @include mixins.h3-text;
+  margin-bottom: 17px;
+}
