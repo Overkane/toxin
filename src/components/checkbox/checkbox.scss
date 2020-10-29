@@ -6,6 +6,9 @@
     @include mixins.body;
     display: inline-flex;
     align-items: center;
+    vertical-align: middle;
+    line-height: 18px;
+    color: colors.$dark-shade50;
     user-select: none;
   }
 
@@ -17,6 +20,8 @@
   &__box {
     content: '';
     flex: 0 0 auto;
+    align-self: baseline;
+    box-sizing: border-box;
     display: inline-block;
     margin-right: 10px;
     border: 1px solid colors.$dark-shade25;
@@ -24,7 +29,7 @@
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
-    background-position: center 40%;
+    background-position: center center;
   }
 
   &__input:checked + &__box {

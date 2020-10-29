@@ -2,8 +2,9 @@ include ~Components/checkbox/checkbox.pug
 
 mixin checkbox-list(title='No title', checkboxList=[])
   fieldset.checkbox-list
-    legend.checkbost-list__title= title
-    each checkbox in checkboxList
-      +checkbox(checkbox)
-    else
-      p Checkbox list is empty
+    legend.checkbox-list__title= title
+    .checkbox-list__list
+      each checkbox in checkboxList
+        +checkbox(checkbox)
+      else
+        p Checkbox list is empty

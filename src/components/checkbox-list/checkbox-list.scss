@@ -2,5 +2,16 @@
 
 .checkbox-list {
   @include mixins.h3-text;
-  margin-bottom: 17px;
+  margin: 0;
+  border: none;
+  padding: 0;
+
+  &__title {
+    margin-bottom: 16.56px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px 0;
+  }
 }
