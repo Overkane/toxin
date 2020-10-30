@@ -1,0 +1,58 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.toggle {
+  &__wrapper {
+    @include mixins.body;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    color: colors.$dark-shade75;
+    user-select: none;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__switch {
+    content: '';
+    position: relative;
+    flex: 0 0 auto;
+    align-self: baseline;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid colors.$dark-shade25;
+    border-radius: 10px;
+    width: 40px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-color: white;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: colors.$dark-shade25;
+      transform: translateX(0);
+      transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
+  }
+
+  &__input:checked + &__switch {
+    border: 1px solid colors.$purple;
+  }
+
+  &__input:checked + &__switch::after {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    transform: translateX(20px);
+  }
+}

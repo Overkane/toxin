@@ -1,32 +1,44 @@
 extends ~Layouts/ui-kit-default.pug
 include ~Components/text-field/text-field.pug
 include ~Components/checkbox-list/checkbox-list.pug
+include ~Components/radio/radio.pug
+include ~Components/toggle/toggle.pug
+include ~Components/bullet-list/bullet-list.pug
+include ~Components/info-card/info-card.pug
+include ~Components/like-button/like-button.pug
 
 block content
-  div(style='position: absolute;left: 141px;top: 140px;')
+  //- Text field 
+  div(style='position: absolute;left: 141px;top: 143px;')
     -
-      const textField = {
+      textField = {
         id: 'text-field',
         label: 'Text field',
         placeholder: 'Email'
       }
     +text-field(textField)
+
+  //- Text field focused
   div(style='position: absolute;left: 141px;top: 227px;')
     -
-      const textFieldFocused = {
+      textFieldFocused = {
         id: 'text-field-focused',
         label: 'Text field',
-        placeholder: 'Email'
+        value: 'This is pretty awesome'
       }
-    +text-field-focused(textField)
+    +text-field-focused(textFieldFocused)
+
+  //- Text field masked
   div(style='position: absolute;left: 141px;top: 395px;')
     -
-      const textFieldMasked = {
+      textFieldMasked = {
         id: 'text-field-masked',
         label: 'Masked text field',
         placeholder: 'ДД.ММ.ГГГГ'
       }
     +text-field(textFieldMasked)
+
+  //- Checkbox
   div(style='position: absolute;left: 587px;top: 143px;')
     -
       checkboxList = [
@@ -48,6 +60,125 @@ block content
       ];
     .checkbox-list-wrapper
       +checkbox-list('Checkbox buttons', checkboxList)
+
+  //- Rich checkbox
+  div(style='position: absolute;left: 587px;top: 1196px;')
+    -
+      richCheckboxList = [
+      {
+        name: 'wideCorridor',
+        label: 'Широкий коридор',
+        description: 'Ширина коридоров в номере не менее 91 см.',  
+        checked: false 
+        },
+      { 
+        name: 'invalidHelper', 
+        label: 'Помощник для инвалидов', 
+        description: 'На 1 этаже вас встретит специалист и проводит до номера.', 
+        checked: false 
+        }
+      ];
+    .rich-checkbox-list-wrapper
+      +checkbox-list('Rich checkbox buttons', richCheckboxList, true)
+
+  //- Radio
+  div(style='position: absolute;left: 587px;top: 313px;')
+    fieldset.radio-group
+      legend.radio-group__title Radio Buttons
+      .radio-group__group
+        -
+          radioMan = {
+          label: 'Мужчина',
+          name: 'gender',
+          value: 'men',
+          checked: true
+          }
+          radioWoman = {
+          label: 'Женщина',
+          name: 'gender',
+          value: 'woman',
+          checked: false
+          }
+        +radio(radioMan)
+        +radio(radioWoman)
+
+  //- div(style='position: absolute;left: 979px;top: 231px;')
+  //-   fieldset.button-group
+  //-     legend.button-group__title Buttons
+  //-     .button-group__group
+  //-       -
+  //-         radioMan = {
+  //-         label: 'Мужчина',
+  //-         name: 'gender',
+  //-         value: 'men',
+  //-         checked: true
+  //-         }
+  //-         radioWoman = {
+  //-         label: 'Женщина',
+  //-         name: 'gender',
+  //-         value: 'woman',
+  //-         checked: false
+  //-         }
+  //-       +radio(radioMan)
+  //-       +radio(radioWoman)
+  //- Toggle
+  div(style='position: absolute;left: 587px;top: 404.56px;')
+    fieldset.toggle-group
+      legend.toggle-group__title Toggle
+      .toggle-group__group
+        -
+          toggleOn = {
+          label: 'Получать спецпредложения',
+          name: 'mailing',
+          checked: true
+          }
+          toggleOff = {
+          label: 'Получать спецпредложения',
+          name: 'mailing',
+          checked: false
+          }
+        +toggle(toggleOn)
+        +toggle(toggleOff)
+
+  //- Bullet list
+  div(style='position: absolute;left: 979px;top: 1196px;')
+    .bullet-list-wrapper
+      -
+        bulletList = [
+          'Нельзя с питомцами',
+          'Без вечеринок и мероприятий',
+          'Время прибытия — после 13:00, а выезд до 12:00'
+        ];
+      +bullet-list('Bullet list', bulletList)
+
+  //- Info cards
+  div(style='position: absolute;left: 140px;top: 1564px;')
+    -
+      infoCardList = [
+        {
+        iconUrl: '/img/emoticon.svg',
+        title: 'Комфорт',  
+        description: 'Шумопоглощающие стены' 
+        },
+        { 
+        iconUrl: '/img/city.svg',
+        title: 'Удобство',  
+        description: 'Окно в каждой из спален' 
+        }
+      ];
+    .info-card-wrapper 
+      each card in infoCardList
+        +info-card(card.iconUrl, card.title, card.description)
+        .info-card-wrapper__division
+
+  //- Like button
+  div(style='position: absolute;left: 587px;top: 534px;')
+    fieldset.like-button-group
+      legend.like-button-group__title Like button
+      .like-button-group__group
+        +like-button(2)
+        +like-button(12)
+
     //- +checkbox-group('Checkbox buttons')
     //-   +checkbox('allowSmoking') Можно курить
     //-   +checkbox('allowPets', true) Можно с питомцами

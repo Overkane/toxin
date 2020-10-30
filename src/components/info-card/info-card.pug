@@ -1,0 +1,7 @@
+mixin info-card(iconURL, title, description)
+  .info-card
+    .info-card__icon-wrapper 
+      img.info-card__icon(src=iconURL, alt='')
+    .info-card__text-wrapper
+      .info-card__title= title
+      .info-card__description= description

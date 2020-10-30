@@ -1,13 +1,22 @@
 @use 'Utilities/colors';
 @use 'Utilities/mixins';
 
-.checkbox {
+.button {
+  width: 99px;
+  border-radius: 22px;
+
+  &__label {
+  }
+
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
   &__wrapper {
     @include mixins.body;
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
     line-height: 20px;
+    color: colors.$dark-shade50;
     user-select: none;
   }
 
@@ -38,24 +47,5 @@
 
   &__input:hover + &__box {
     border: 1px solid colors.$purple;
-  }
-
-  &__description-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__label {
-    color: colors.$dark-shade50;
-    &_bold {
-      font-weight: bold;
-    }
-  }
-
-  &__decription {
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 14px;
-    color: colors.$dark-shade50;
   }
 }

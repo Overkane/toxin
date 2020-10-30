@@ -1,0 +1,10 @@
+mixin toggle(toggle={})
+  .toggle
+    label.toggle__wrapper
+      input.toggle__input(
+        type='checkbox',
+        name=toggle.name,
+        checked=toggle.checked
+      )
+      span.toggle__switch
+      span.toggle__label= toggle.label

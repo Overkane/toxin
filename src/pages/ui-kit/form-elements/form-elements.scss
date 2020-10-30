@@ -1,3 +1,75 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
 .checkbox-list-wrapper {
   width: 222px;
+}
+
+.rich-checkbox-list-wrapper {
+  width: 266px;
+}
+
+.bullet-list-wrapper {
+  width: 292px;
+}
+
+.info-card-wrapper {
+  &__division:not(:last-child) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 1px;
+    background-color: colors.$dark-shade10;
+  }
+}
+
+.radio-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+}
+
+.toggle-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__group {
+    display: grid;
+    gap: 14px 10px;
+  }
+}
+
+.like-button-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+}
+
+.button-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px 20px;
+  }
 }

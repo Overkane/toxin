@@ -1,0 +1,25 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.bullet-list {
+  &__title {
+    @include mixins.h3-text;
+  }
+
+  &__list {
+    @include mixins.body;
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    margin-top: 16px;
+    padding-left: 10.43px;
+    line-height: 24px;
+  }
+
+  &__list-item {
+    padding-left: 10.43px;
+    &::marker {
+      content: url('bullet.svg');
+    }
+  }
+}

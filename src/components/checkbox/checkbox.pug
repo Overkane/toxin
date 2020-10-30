@@ -1,10 +1,23 @@
 mixin checkbox(checkbox={})
   .checkbox
-    label.checkbox__label
+    label.checkbox__wrapper
       input.checkbox__input(
         type='checkbox',
         name=checkbox.name,
         checked=checkbox.checked
       )
       span.checkbox__box
-      span= checkbox.label
+      span.checkbox__label= checkbox.label
+
+mixin checkbox-rich(checkbox={})
+  .checkbox
+    label.checkbox__wrapper
+      input.checkbox__input(
+        type='checkbox',
+        name=checkbox.name,
+        checked=checkbox.checked
+      )
+      span.checkbox__box
+      .checkbox__description-wrapper
+        span.checkbox__label.checkbox__label_bold= checkbox.label
+        span.checkbox__decription= checkbox.description

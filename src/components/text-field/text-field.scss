@@ -2,6 +2,9 @@
 @use 'Utilities/mixins';
 
 .text-field {
+  display: flex;
+  flex-direction: column;
+
   &__label {
     @include mixins.h3-text;
   }
@@ -11,17 +14,15 @@
     margin-top: 5px;
     border: 1px solid colors.$dark-shade25;
     border-radius: 4px;
-    padding: 13px 15px;
+    padding: 13px 14px 13px;
     width: 320px;
     font-size: 1rem;
-    line-height: 18px;
     color: colors.$dark-shade75;
 
     &:focus,
     &:hover,
     &_focused {
       border: 1px solid colors.$dark-shade50;
-      border-radius: 4px;
     }
 
     &::placeholder {

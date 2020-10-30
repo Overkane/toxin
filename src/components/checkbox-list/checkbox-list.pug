@@ -1,10 +1,13 @@
 include ~Components/checkbox/checkbox.pug
 
-mixin checkbox-list(title='No title', checkboxList=[])
+mixin checkbox-list(title='No title', checkboxList=[], rich=false)
   fieldset.checkbox-list
     legend.checkbox-list__title= title
     .checkbox-list__list
       each checkbox in checkboxList
-        +checkbox(checkbox)
+        if rich
+          +checkbox-rich(checkbox)
+        else
+          +checkbox(checkbox)
       else
         p Checkbox list is empty

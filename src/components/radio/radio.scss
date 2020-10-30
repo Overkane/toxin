@@ -1,13 +1,11 @@
 @use 'Utilities/colors';
 @use 'Utilities/mixins';
 
-.checkbox {
+.radio {
   &__wrapper {
     @include mixins.body;
     display: inline-flex;
     align-items: center;
-    vertical-align: middle;
-    line-height: 20px;
     user-select: none;
   }
 
@@ -24,38 +22,37 @@
     display: inline-block;
     margin-right: 10px;
     border: 1px solid colors.$dark-shade25;
-    border-radius: 4px;
+    border-radius: 50%;
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
-    background-position: center 40%;
+    background-position: center center;
+    text-align: center;
+  }
+
+  &__label {
+    color: colors.$dark-shade50;
   }
 
   &__input:checked + &__box {
     border: 1px solid colors.$purple;
-    background-image: url('checkbox-flag.svg');
+  }
+
+  &__input:checked + &__box::after {
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   }
 
   &__input:hover + &__box {
     border: 1px solid colors.$purple;
   }
 
-  &__description-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__label {
-    color: colors.$dark-shade50;
-    &_bold {
-      font-weight: bold;
-    }
-  }
-
-  &__decription {
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 14px;
-    color: colors.$dark-shade50;
+  &__input:checked ~ &__label {
+    color: colors.$dark-shade75;
   }
 }

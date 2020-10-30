@@ -1,0 +1,23 @@
+@use 'Utilities/mixins';
+
+.info-card {
+  @include mixins.body;
+  display: flex;
+  line-height: 24px;
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__text-wrapper {
+    margin-left: 10px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,11 @@
+mixin radio(radio={})
+  .radio
+    label.radio__wrapper
+      input.radio__input(
+        type='radio',
+        name=radio.name,
+        value=radio.value,
+        checked=radio.checked
+      )
+      span.radio__box
+      span.radio__label= radio.label

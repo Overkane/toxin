@@ -1,0 +1,41 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: colors.$dark-shade25;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 0;
+    padding: 0;
+    width: 38px;
+    height: 18px;
+    background-color: #fff;
+  }
+  &__like {
+    @include mixins.body;
+  }
+
+  &__counter {
+    @include mixins.body;
+    font-size: 10px;
+    color: colors.$dark-shade25;
+  }
+
+  &:hover {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
+
+  &:hover &__counter {
+    color: #bc9cff;
+  }
+}
