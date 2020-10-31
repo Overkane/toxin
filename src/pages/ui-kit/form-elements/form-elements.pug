@@ -3,9 +3,11 @@ include ~Components/text-field/text-field.pug
 include ~Components/checkbox-list/checkbox-list.pug
 include ~Components/radio/radio.pug
 include ~Components/toggle/toggle.pug
+include ~Components/button/button.pug
 include ~Components/bullet-list/bullet-list.pug
 include ~Components/info-card/info-card.pug
 include ~Components/like-button/like-button.pug
+include ~Components/rate-button/rate-button.pug
 
 block content
   //- Text field 
@@ -102,25 +104,34 @@ block content
         +radio(radioMan)
         +radio(radioWoman)
 
-  //- div(style='position: absolute;left: 979px;top: 231px;')
-  //-   fieldset.button-group
-  //-     legend.button-group__title Buttons
-  //-     .button-group__group
-  //-       -
-  //-         radioMan = {
-  //-         label: 'Мужчина',
-  //-         name: 'gender',
-  //-         value: 'men',
-  //-         checked: true
-  //-         }
-  //-         radioWoman = {
-  //-         label: 'Женщина',
-  //-         name: 'gender',
-  //-         value: 'woman',
-  //-         checked: false
-  //-         }
-  //-       +radio(radioMan)
-  //-       +radio(radioWoman)
+  //- Buttons
+  div(style='position: absolute;left: 979px;top: 231px;')
+    fieldset.button-group
+      legend.button-group__title Buttons
+      .button-group__group
+        //- -
+        //-   radioMan = {
+        //-   label: 'Мужчина',
+        //-   name: 'gender',
+        //-   value: 'men',
+        //-   checked: true
+        //-   }
+        //-   radioWoman = {
+        //-   label: 'Женщина',
+        //-   name: 'gender',
+        //-   value: 'woman',
+        //-   checked: false
+        //-   }
+        +button('Click me')
+        +button-disabled('Click me')
+        +button-border('Click me')
+        +button-border-disabled('Click me')
+  .button-group__group(style='position: absolute;left: 980px;top: 411px;')
+    +button-simple('Click me')
+    +button-simple-dark('Click me')
+  .div(style='position: absolute;left: 979px;top: 456px;')
+    +button-big('Перейти к оплате')
+
   //- Toggle
   div(style='position: absolute;left: 587px;top: 404.56px;')
     fieldset.toggle-group
@@ -177,7 +188,15 @@ block content
       legend.like-button-group__title Like button
       .like-button-group__group
         +like-button(2)
-        +like-button(12)
+        +like-button-active(12)
+
+  //- Rate button
+  div(style='position: absolute;left: 587px;top: 625px;')
+    fieldset.rate-button-group
+      legend.rate-button-group__title Rate button
+      .rate-button-group__group
+        +rate-button('rate1', 4)
+        +rate-button('rate2', 5)
 
     //- +checkbox-group('Checkbox buttons')
     //-   +checkbox('allowSmoking') Можно курить

@@ -1,6 +1,11 @@
-mixin like-button(counterValue)
+mixin like-button(initCount)
   .like-button
     button.like-button__button
-      span.like-button__like
+      span.like-button__like favorite_border
+      span.like-button__like-count= initCount
 
-  span.like-button__counter= counterValue
+mixin like-button-active(initCount)
+  .like-button.like-button_active
+    button.like-button__button
+      span.like-button__like favorite
+      span.like-button__like-count= initCount

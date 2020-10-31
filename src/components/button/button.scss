@@ -1,51 +1,68 @@
 @use 'Utilities/colors';
 @use 'Utilities/mixins';
+@use 'Utilities/fonts';
 
 .button {
-  width: 99px;
+  position: relative;
   border-radius: 22px;
+  padding: 0;
+  width: 99px;
+  height: 44px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  cursor: pointer;
 
   &__label {
-  }
+    @include mixins.h3-text;
+    $border: 2px;
 
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-
-  &__wrapper {
-    @include mixins.body;
+    position: absolute;
+    top: $border;
+    right: $border;
+    bottom: $border;
+    left: $border;
     display: inline-flex;
     align-items: center;
-    vertical-align: middle;
-    line-height: 20px;
+    justify-content: center;
+    border-radius: 22px;
+    color: #fff;
+  }
+
+  &_border &__label {
+    color: colors.$purple;
+    background-color: white;
+    opacity: unset;
+  }
+
+  &_simple {
+    width: auto;
+    height: auto;
+    background: none;
+  }
+
+  &_simple &__label {
+    position: static;
+    color: colors.$purple;
+  }
+
+  &_dark &__label {
     color: colors.$dark-shade50;
-    user-select: none;
   }
 
-  &__input {
+  &_big {
+    width: 320px;
+  }
+
+  &_big &__label::after {
+    @include fonts.material-icons;
+    content: 'arrow_forward';
     position: absolute;
-    opacity: 0;
+    right: 8px;
   }
 
-  &__box {
-    content: '';
-    flex: 0 0 auto;
-    align-self: baseline;
-    box-sizing: border-box;
-    display: inline-block;
-    margin-right: 10px;
-    border: 1px solid colors.$dark-shade25;
-    border-radius: 4px;
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-position: center 40%;
-  }
+  &_disabled {
+    $color1: adjust-color(#bc9cff, $alpha: -0.5);
+    $color2: adjust-color(#8ba4f9, $alpha: -0.5);
 
-  &__input:checked + &__box {
-    border: 1px solid colors.$purple;
-    background-image: url('checkbox-flag.svg');
-  }
-
-  &__input:hover + &__box {
-    border: 1px solid colors.$purple;
+    background: linear-gradient(180deg, $color1 0%, $color2 100%);
   }
 }

@@ -61,6 +61,19 @@
   }
 }
 
+.rate-button-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px 20px;
+  }
+}
+
 .button-group {
   &__title {
     @include mixins.h3-text;

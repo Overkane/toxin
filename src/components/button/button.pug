@@ -1,3 +1,27 @@
-mixin checkbox(checkbox={})
+mixin button(label)
   button.button
-    span.button__label
+    span.button__label= label
+
+mixin button-disabled(label)
+  button.button.button_disabled
+    span.button__label= label
+
+mixin button-border(label)
+  button.button.button_border
+    span.button__label= label
+
+mixin button-border-disabled(label)
+  button.button.button_border.button_disabled
+    span.button__label= label
+
+mixin button-simple(label)
+  button.button.button_simple
+    span.button__label= label
+
+mixin button-simple-dark(label)
+  button.button.button_simple.button_dark
+    span.button__label= label
+
+mixin button-big(label)
+  button.button.button_big
+    span.button__label= label

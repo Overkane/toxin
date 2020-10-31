@@ -1,5 +1,6 @@
 @use 'Utilities/colors';
 @use 'Utilities/mixins';
+@use 'Utilities/fonts';
 
 .like-button {
   display: flex;
@@ -11,31 +12,59 @@
   background-color: colors.$dark-shade25;
 
   &__button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     border: 0;
+    outline: none;
     padding: 0;
     width: 38px;
     height: 18px;
     background-color: #fff;
   }
-  &__like {
-    @include mixins.body;
-  }
 
-  &__counter {
-    @include mixins.body;
+  &__like {
+    @include fonts.material-icons;
+    position: absolute;
+    left: 4px;
     font-size: 10px;
     color: colors.$dark-shade25;
+    pointer-events: none;
+  }
+
+  &__like-count {
+    @include mixins.body;
+    position: absolute;
+    top: 3px;
+    right: 11px;
+    font-size: 10px;
+    color: colors.$dark-shade25;
+    pointer-events: none;
   }
 
   &:hover {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, colors.$purple 0%, #8ba4f9 100%);
   }
 
-  &:hover &__counter {
-    color: #bc9cff;
+  &:hover &__like-count {
+    color: colors.$purple;
+  }
+
+  &:hover &__like {
+    color: colors.$purple;
+  }
+
+  &_active {
+    background: linear-gradient(180deg, colors.$purple 0%, #8ba4f9 100%);
+  }
+
+  &_active &__like-count {
+    color: colors.$purple;
+  }
+
+  &_active &__like {
+    color: colors.$purple;
   }
 }
