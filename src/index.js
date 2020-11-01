@@ -9,6 +9,8 @@ import 'Components/button/button.scss';
 import 'Components/rate-button/rate-button.scss';
 import 'Components/like-button/like-button.scss';
 import 'Components/like-button/like-button.js';
+import 'Components/pagination/pagination.scss';
+import 'Components/pagination/pagination.js';
 import 'Components/checkbox/checkbox.scss';
 import 'Components/checkbox/checkbox-flag.svg';
 import 'Components/checkbox-list/checkbox-list.scss';

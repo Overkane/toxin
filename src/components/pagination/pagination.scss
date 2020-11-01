@@ -1,0 +1,64 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+@use 'Utilities/fonts';
+
+.paginationjs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 22px;
+      width: 40px;
+      height: 40px;
+
+      a {
+        text-decoration: none;
+        user-select: none;
+      }
+    }
+  }
+
+  &-page {
+    a {
+      font-size: 12px;
+      color: colors.$dark-shade50;
+    }
+  }
+
+  &-active {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+    a {
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  &-next {
+    @include fonts.material-icons;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+    a {
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+  &-footer {
+    margin-top: 11px;
+  }
+}

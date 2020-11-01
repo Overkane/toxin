@@ -86,3 +86,10 @@
     gap: 30px 20px;
   }
 }
+
+.pagination-group {
+  &__title {
+    @include mixins.h3-text;
+    margin-bottom: 16px;
+  }
+}

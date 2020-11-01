@@ -8,6 +8,7 @@ include ~Components/bullet-list/bullet-list.pug
 include ~Components/info-card/info-card.pug
 include ~Components/like-button/like-button.pug
 include ~Components/rate-button/rate-button.pug
+include ~Components/pagination/pagination.pug
 
 block content
   //- Text field 
@@ -109,19 +110,6 @@ block content
     fieldset.button-group
       legend.button-group__title Buttons
       .button-group__group
-        //- -
-        //-   radioMan = {
-        //-   label: 'Мужчина',
-        //-   name: 'gender',
-        //-   value: 'men',
-        //-   checked: true
-        //-   }
-        //-   radioWoman = {
-        //-   label: 'Женщина',
-        //-   name: 'gender',
-        //-   value: 'woman',
-        //-   checked: false
-        //-   }
         +button('Click me')
         +button-disabled('Click me')
         +button-border('Click me')
@@ -197,6 +185,12 @@ block content
       .rate-button-group__group
         +rate-button('rate1', 4)
         +rate-button('rate2', 5)
+
+  //- Pagination
+  div(style='position: absolute;left: 979px;top: 540px;')
+    .pagination-group 
+      .pagination-group__title Pagination
+      +pagination
 
     //- +checkbox-group('Checkbox buttons')
     //-   +checkbox('allowSmoking') Можно курить
