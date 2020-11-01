@@ -3,5 +3,12 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
+  "rules": {},
+  "env": {
+    "browser": true,
+    "commonJs": true,
+    "es6": true,
+    "jquery": true
+  },
   "extends": ["eslint:recommended", "prettier"]
 }

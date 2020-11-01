@@ -1,3 +1,2 @@
 # Docs https://eslint.org/docs/user-guide/configuring#eslintignore
 dist
-webpack.config.js
