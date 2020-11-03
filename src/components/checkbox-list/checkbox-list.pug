@@ -11,3 +11,20 @@ mixin checkbox-list(title='No title', checkboxList=[], rich=false)
           +checkbox(checkbox)
       else
         p Checkbox list is empty
+
+mixin checkbox-list-expandable(title='No title', checkboxList=[], rich=false, expanded=false)
+  - addTogglerClass = expanded ? " checkbox-list__toggler_expanded" : "";
+
+  fieldset.checkbox-list
+    div(class="checkbox-list__toggler" + addTogglerClass)
+      legend.checkbox-list__title= title
+      span.checkbox-list__toggle-icon expand_more
+    .checkbox-list__list-wrapper
+      .checkbox-list__list
+        each checkbox in checkboxList
+          if rich
+            +checkbox-rich(checkbox)
+          else
+            +checkbox(checkbox)
+        else
+          p Checkbox list is empty

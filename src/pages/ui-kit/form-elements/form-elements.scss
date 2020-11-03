@@ -5,6 +5,11 @@
   width: 222px;
 }
 
+.checkbox-list-group {
+  display: grid;
+  gap: 20px;
+}
+
 .rich-checkbox-list-wrapper {
   width: 266px;
 }
@@ -92,4 +97,10 @@
     @include mixins.h3-text;
     margin-bottom: 16px;
   }
+}
+
+.date-dropdown-group {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 21px;
 }

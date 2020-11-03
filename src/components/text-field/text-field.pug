@@ -18,6 +18,18 @@ mixin text-field-focused(textField={})
       value=textField.value
     )
 
+mixin text-field-email(textField={})
+  form.text-field
+    label.text-field__label(for=textField.id)= textField.label
+    .text-field__input-wrapper
+      input.text-field__input.text-field__input_email(
+        type='email',
+        id=textField.id,
+        placeholder=textField.placeholder,
+        value=textField.value
+      )
+      button.text-field__subscription-button arrow_forward
+
 mixin text-field-masked(textField={}, alias="date")
   - const inputmask = '"alias": ' + '"' + alias + '"';
   .text-field

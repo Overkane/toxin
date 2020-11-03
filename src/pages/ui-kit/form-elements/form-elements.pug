@@ -10,6 +10,8 @@ include ~Components/like-button/like-button.pug
 include ~Components/rate-button/rate-button.pug
 include ~Components/pagination/pagination.pug
 include ~Components/range-slider/range-slider.pug
+include ~Components/date-dropdown/date-dropdown.pug
+include ~Components/customer-review/customer-review.pug
 
 block content
   //- Text field 
@@ -84,6 +86,45 @@ block content
       ];
     .rich-checkbox-list-wrapper
       +checkbox-list('Rich checkbox buttons', richCheckboxList, true)
+
+  //- Expandable checkbox list
+  div(style='position: absolute;left: 141px;top: 1182px;')
+    -
+      expandableCheckboxList = [
+      {
+        name: 'includeBreakfast',
+        label: 'Завтрак',  
+        checked: false 
+        },
+      { 
+        name: 'includeTable', 
+        label: 'Письменный стол', 
+        checked: true 
+        },
+      { 
+        name: 'includeBabyTable', 
+        label: 'Стул для кормления', 
+        checked: true 
+        },
+      { 
+        name: 'includeBabyBed', 
+        label: 'Кроватка', 
+        checked: true 
+        },
+      { 
+        name: 'includeTV', 
+        label: 'Телевизор', 
+        checked: false 
+        },
+      { 
+        name: 'includeShampoo', 
+        label: 'Шампунь', 
+        checked: false 
+        }
+      ];
+    .checkbox-list-group
+      +checkbox-list-expandable('Expandable checkbox list', expandableCheckboxList)
+      +checkbox-list-expandable('Expandable checkbox list', expandableCheckboxList, false, true)
 
   //- Radio
   div(style='position: absolute;left: 587px;top: 313px;')
@@ -196,21 +237,51 @@ block content
   //- Range slider 
   div(style='position: absolute;left: 979px;top: 143px;')
     +range-slider
-    //- +checkbox-group('Checkbox buttons')
-    //-   +checkbox('allowSmoking') Можно курить
-    //-   +checkbox('allowPets', true) Можно с питомцами
-    //-   +checkbox('allowGuests', true) Можно пригласить гостей (до 10 человек)
-    //-   .text-field.text-field_focus
-    //-   .dropdown
-    //-   .text-field.text-field_masked
-    //-   div
-    //-     .dropdown.dropdown-date
-    //-     .dropdown.dropdown-date
-    //-   .dropdown-date-filter
-    //-   .text-field.text-field_subscription
-    //-   .dropdown
-    //-   .dropdown.dropdown_expanded
-    //-   .checkbox-list-expandable
-    //-   .checkbox-list-expandable_expanded
-    //- .middle-col
-    //- .right-col
+
+  //- Subscription text field
+  div(style='position: absolute;left: 140px;top: 712px;')
+    -
+      textFieldEmail = {
+        id: 'text-field-email',
+        label: 'Subscription text field',
+        placeholder: 'Email'
+      }
+    +text-field-email(textFieldEmail)
+
+  //- Date dropdown
+  div(style='position: absolute;left: 141px;top: 502px;')
+    -
+      dateDropdownEmpty = {
+        label: 'Date dropdown',
+        id: 'datepicker-empty',
+        value: 'ДД.ММ.ГГГГ'
+      },
+      dateDropdownFilled = {
+        label: 'Date dropdown',
+        id: 'datepicker-filled',
+        value: '19.08.2019'
+      }
+    .date-dropdown-group 
+      +date-dropdown(dateDropdownEmpty)
+      +date-dropdown(dateDropdownFilled) 
+
+  //- Filter date dropdown
+  div(style='position: absolute;left: 141px;top: 607px;')
+    -
+      filterDateDropdown = {
+        label: 'Filter date dropdown',
+        id: 'filter-date-dropdown',
+        value: '19 авг - 23 авг'
+      },
+    +filter-date-dropdown(filterDateDropdown)
+
+  //- Customer review
+  div(style='position: absolute;left: 587px;top: 1574px;')
+    -
+      customerReview = {
+        customerName: 'Мурад Сарафанов',
+        customerPhoto: '/img/customer1-photo.jpg',
+        reviewDate: '5 дней назад',
+        reviewText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      },
+    +customer-review(customerReview)

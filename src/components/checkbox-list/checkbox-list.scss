@@ -1,14 +1,46 @@
 @use 'Utilities/mixins';
+@use 'Utilities/fonts';
+@use 'Utilities/colors';
 
 .checkbox-list {
   @include mixins.h3-text;
 
   &__title {
-    margin-bottom: 16px;
   }
 
   &__list {
     display: grid;
     gap: 10px 0;
+    margin-top: 16px;
+  }
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 266px;
+    user-select: none;
+  }
+
+  &__toggle-icon {
+    @include fonts.material-icons;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: colors.$dark-shade50;
+  }
+
+  &__toggler + &__list-wrapper &__list {
+    margin-top: 0;
+  }
+
+  &__toggler_expanded &__toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  &__toggler:not(&__toggler_expanded) + &__list-wrapper {
+    display: none;
   }
 }

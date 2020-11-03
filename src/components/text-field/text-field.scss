@@ -1,5 +1,6 @@
 @use 'Utilities/colors';
 @use 'Utilities/mixins';
+@use 'Utilities/fonts';
 
 .text-field {
   display: flex;
@@ -9,7 +10,17 @@
     @include mixins.h3-text;
   }
 
+  &__input-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 5px;
+    border: 1px solid colors.$dark-shade25;
+    border-radius: 4px;
+    width: 267px;
+  }
+
   &__input {
+    position: relative;
     box-sizing: border-box;
     margin-top: 5px;
     border: 1px solid colors.$dark-shade25;
@@ -28,5 +39,22 @@
     &::placeholder {
       color: colors.$dark-shade25;
     }
+  }
+
+  &__subscription-button {
+    @include fonts.material-icons;
+    flex: 0 0 auto;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    color: colors.$purple;
+    background-color: #fff;
+  }
+
+  &__input-wrapper &__input {
+    margin: 0;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
   }
 }
