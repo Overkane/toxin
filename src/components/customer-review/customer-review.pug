@@ -1,0 +1,17 @@
+include ~Components/like-button/like-button.pug
+
+mixin customer-review(customerReview)
+  .customer-review
+    //- .customer-review__header
+    .customer-review__customer-photo-wrapper
+      img.customer-review__customer-photo(
+        src=customerReview.customerPhoto,
+        alt='Customer photo'
+      )
+    .customer-review__header-info
+      .customer-review__customer-name= customerReview.customerName
+      .customer-review__review-date= customerReview.reviewDate
+    //- .customer-review__review-body
+    .customer-review__like-button-wrapper
+      +like-button-active(12)
+    .customer-review__review= customerReview.reviewText

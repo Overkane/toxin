@@ -1,0 +1,49 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+@use 'Utilities/fonts';
+
+.customer-review {
+  @include mixins.body;
+  width: 711px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 10px 10px;
+
+  &__customer-photo-wrapper {
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__customer-photo {
+    position: absolute;
+    left: -20px;
+    top: -10px;
+  }
+
+  &__header-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__customer-name {
+    font-weight: bold;
+    line-height: 24px;
+  }
+
+  &__review-date {
+    line-height: 24px;
+  }
+
+  &__like-button-wrapper {
+    justify-self: center;
+    margin-top: 2px;
+  }
+
+  &__review {
+    line-height: 24px;
+  }
+}
