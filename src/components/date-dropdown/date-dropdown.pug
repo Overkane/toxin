@@ -1,0 +1,24 @@
+mixin date-dropdown(dateDropdown={})
+  .date-dropdown
+    label.date-dropdown__label(for=dateDropdown.id)= dateDropdown.label
+    .date-dropdown__input-wrapper 
+      input.date-dropdown__input(
+        type='text',
+        data-position='right top',
+        id=dateDropdown.id,
+        value=dateDropdown.value
+      )
+      span.date-dropdown__expand-icon expand_more
+
+mixin filter-date-dropdown(dateDropdown={})
+  .date-dropdown
+    label.date-dropdown__label(for=dateDropdown.id)= dateDropdown.label
+    .date-dropdown__input-wrapper.date-dropdown__input-wrapper_filter 
+      input.date-dropdown__input.date-dropdown__input-filter(
+        type='text',
+        data-position='right top',
+        id=dateDropdown.id,
+        value=dateDropdown.value,
+        readonly
+      )
+      span.date-dropdown__expand-icon expand_more
