@@ -1,7 +1,15 @@
 .ui-kit-header {
+  display: flex;
   padding: 30px 0 0 30px;
 
   &__logo {
     vertical-align: middle;
+  }
+
+  &__nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 20px;
+    list-style-type: none;
   }
 }
