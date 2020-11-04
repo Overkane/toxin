@@ -11,6 +11,7 @@ include ~Components/rate-button/rate-button.pug
 include ~Components/pagination/pagination.pug
 include ~Components/range-slider/range-slider.pug
 include ~Components/date-dropdown/date-dropdown.pug
+include ~Components/dropdown/dropdown.pug
 include ~Components/customer-review/customer-review.pug
 
 block content
@@ -43,6 +44,16 @@ block content
         placeholder: 'ДД.ММ.ГГГГ'
       }
     +text-field-masked(textFieldMasked)
+
+  //- Dropdown
+  div(style='position: absolute;left: 141px;top: 311px;')
+    -
+      dropdown = {
+        id: 'dropdown',
+        label: 'Dropdown',
+        placeholder: 'Сколько гостей'
+      }
+    +dropdown(dropdown)
 
   //- Checkbox
   div(style='position: absolute;left: 587px;top: 143px;')
@@ -135,7 +146,7 @@ block content
           radioMan = {
           label: 'Мужчина',
           name: 'gender',
-          value: 'men',
+          value: 'man',
           checked: true
           }
           radioWoman = {

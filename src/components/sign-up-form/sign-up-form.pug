@@ -1,0 +1,70 @@
+include ~Components/button/button.pug
+include ~Components/toggle/toggle.pug
+include ~Components/radio/radio.pug
+include ~Components/text-field/text-field.pug
+
+mixin sign-up-form
+  -
+    nameField = {
+      id: 'name',
+      label: '',
+      placeholder: 'Имя'
+    },
+    surnameField = {
+      id: 'surname',
+      label: '',
+      placeholder: 'Фамилия'
+    },
+    radioMan = {
+      label: 'Мужчина',
+      name: 'gender',
+      value: 'man',
+      checked: true
+    },
+    radioWoman = {
+      label: 'Женщина',
+      name: 'gender',
+      value: 'woman',
+      checked: false
+    },
+    bornDate = {
+      id: 'bornDate',
+      label: 'Дата рождения',
+      placeholder: 'ДД.ММ.ГГГГ'
+    },
+    email = {
+      id: 'email',
+      label: 'Данные для входа в сервис',
+      placeholder: 'Email'
+    },
+    password = {
+      id: 'password',
+      label: '',
+      placeholder: 'Пароль'
+    },
+    mailing = {
+      label: 'Получать спецпредложения',
+      name: 'mailing',
+      checked: false
+    }
+
+  form.sign-up-form(action='')
+    .sign-up-form__title Регистрация аккаунта
+    .sign-up-form__username
+      +text-field(nameField)
+      +text-field(surnameField)
+    .sign-up-form__gender-radio-group 
+      +radio(radioMan)
+      +radio(radioWoman)
+    .sign-up-form__born-date 
+      +text-field-masked(bornDate)
+    .sign-up-form__sign-up-info
+      +text-field(email)
+      +text-field(password)
+    .sign-up-form__mailing
+      +toggle(mailing)
+    .sign-up-form__submit-button
+      +button-big('Перейти к оплате')
+    .sign-up-form__footer 
+      span Уже есть аккаунт на Toxin
+      +button-border('Войти')

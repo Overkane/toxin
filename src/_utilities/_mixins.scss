@@ -37,3 +37,13 @@
   text-transform: none;
   color: colors.$dark-shade75;
 }
+
+@mixin form {
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  width: 380px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}

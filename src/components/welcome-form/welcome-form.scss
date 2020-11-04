@@ -1,0 +1,24 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.welcome-form {
+  @include mixins.form;
+
+  &__title {
+    @include mixins.h1-text;
+  }
+
+  &__dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__guests {
+    margin-top: 30px;
+  }
+
+  &__submit-button {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,32 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.sign-in-form {
+  @include mixins.form;
+
+  &__title {
+    @include mixins.h1-text;
+  }
+
+  &__born-date {
+    margin-top: 20px;
+  }
+
+  &__sign-in-info {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  &__submit-button {
+    margin-top: 20px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    color: black;
+  }
+}

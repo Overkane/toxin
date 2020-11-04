@@ -1,0 +1,12 @@
+extends ~Layouts/ui-kit-default.pug
+include ~Components/welcome-form/welcome-form.pug
+include ~Components/sign-up-form/sign-up-form.pug
+include ~Components/sign-in-form/sign-in-form.pug
+include ~Components/room-book-form/room-book-form.pug
+
+block content
+  .cards
+    +welcome-form
+    +sign-up-form
+    +room-book-form
+    +sign-in-form

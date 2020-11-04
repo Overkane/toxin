@@ -34,7 +34,7 @@ mixin text-field-masked(textField={}, alias="date")
   - const inputmask = '"alias": ' + '"' + alias + '"';
   .text-field
     label.text-field__label(for=textField.id)= textField.label
-    input.text-field__input.text-field__input_focused(
+    input.text-field__input(
       type='text',
       id=textField.id,
       value=textField.value,

@@ -1,0 +1,28 @@
+include ~Components/button/button.pug
+include ~Components/toggle/toggle.pug
+include ~Components/radio/radio.pug
+include ~Components/text-field/text-field.pug
+
+mixin sign-in-form
+  -
+    email = {
+      id: 'email',
+      label: '',
+      placeholder: 'Email'
+    },
+    password = {
+      id: 'password',
+      label: '',
+      placeholder: 'Пароль'
+    }
+
+  form.sign-in-form(action='')
+    .sign-in-form__title Войти
+    .sign-in-form__sign-in-info
+      +text-field(email)
+      +text-field(password)
+    .sign-in-form__submit-button
+      +button-big('Войти')
+    .sign-in-form__footer 
+      span Нет аккаунта на Toxin?
+      +button-border('Создать')

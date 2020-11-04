@@ -1,1 +1,10 @@
-mixin dropdown
+mixin dropdown(dropdown={})
+  .dropdown
+    label.dropdown__label(for=dropdown.id)= dropdown.label
+    .dropdown__input-wrapper 
+      input.dropdown__input(
+        type='text',
+        id=dropdown.id,
+        placeholder=dropdown.placeholder
+      )
+      span.dropdown__expand-icon expand_more

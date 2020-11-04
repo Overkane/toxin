@@ -1,0 +1,71 @@
+include ~Components/button/button.pug
+include ~Components/toggle/toggle.pug
+include ~Components/radio/radio.pug
+include ~Components/text-field/text-field.pug
+
+mixin room-book-form
+  -
+    arrive = {
+      label: 'Прибытие',
+      id: 'arrive',
+      value: '19.08.2019'
+    }
+    depart = {
+      label: 'Выезд',
+      id: 'depart',
+      value: '23.08.2019'
+    },
+    guests = {
+      label: 'Гости',
+      id: 'guests',
+      placeholder: '3 гостя'
+    }
+
+    radioMan = {
+      label: 'Мужчина',
+      name: 'gender',
+      value: 'man',
+      checked: true
+    },
+    radioWoman = {
+      label: 'Женщина',
+      name: 'gender',
+      value: 'woman',
+      checked: false
+    },
+    bornDate = {
+      id: 'bornDate',
+      label: 'Дата рождения',
+      placeholder: 'ДД.ММ.ГГГГ'
+    },
+    email = {
+      id: 'email',
+      label: 'Данные для входа в сервис',
+      placeholder: 'Email'
+    },
+    password = {
+      id: 'password',
+      label: '',
+      placeholder: 'Пароль'
+    },
+    mailing = {
+      label: 'Получать спецпредложения',
+      name: 'mailing',
+      checked: false
+    }
+
+  form.room-book-form(action='')
+    .room-book-form__header
+      .room-book-form__room-info № 888 люкс
+      .room-book-form__room-price 9 990₽ в сутки
+    .room-book-form__dates
+      +date-dropdown(arrive)
+      +date-dropdown(depart)
+    .room-book-form__guests
+      +dropdown(guests)
+    .room-book-form__book-price
+      .room-book-form__room-price 9 990₽ х 4 суток 39 960₽
+      .room-book-form__service-price Сбор за услуги: скидка 2 179₽ 0₽
+      .room-book-form__additional-service-price Сбор за дополнительные услуги 300₽
+    .room-book-form__submit-button
+      +button-big('Забронировать')

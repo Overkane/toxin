@@ -1,2 +1,47 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+@use 'Utilities/fonts';
+
 .dropdown {
+  &__label {
+    @include mixins.h3-text;
+  }
+
+  &__input-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid colors.$dark-shade25;
+    border-radius: 4px;
+    padding-left: 15px;
+    width: 320px;
+    height: 44px;
+
+    &:focus,
+    &:hover {
+      border: 1px solid colors.$dark-shade50;
+    }
+
+    &_filter {
+      width: 266px;
+    }
+  }
+
+  &__input {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    color: colors.$dark-shade75;
+  }
+
+  &__expand-icon {
+    @include fonts.material-icons;
+    flex: 0 0 auto;
+    width: 44px;
+    line-height: 44px;
+    text-align: center;
+    user-select: none;
+  }
 }

@@ -1,0 +1,31 @@
+include ~Components/date-dropdown/date-dropdown.pug
+include ~Components/dropdown/dropdown.pug
+include ~Components/button/button.pug
+
+mixin welcome-form
+  -
+    arrive = {
+      label: 'Прибытие',
+      id: 'arrive',
+      value: 'ДД.ММ.ГГГГ'
+    }
+    depart = {
+      label: 'Выезд',
+      id: 'depart',
+      value: 'ДД.ММ.ГГГГ'
+    },
+    guests = {
+      label: 'Гости',
+      id: 'guests',
+      placeholder: 'Сколько гостей'
+    }
+
+  form.welcome-form(action='')
+    .welcome-form__title Найдём номера под ваши пожелания
+    .welcome-form__dates
+      +date-dropdown(arrive)
+      +date-dropdown(depart)
+    .welcome-form__guests
+      +dropdown(guests)
+    .welcome-form__submit-button
+      +button-big('Подобрать номер')
