@@ -38,10 +38,27 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'resolve-url-loader',
-          'sass-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'resolve-url-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
       {
@@ -88,6 +105,10 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'ui-kit/form-elements.html',
       template: './src/pages/ui-kit/form-elements/form-elements.pug',
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'ui-kit/cards.html',
+      template: './src/pages/ui-kit/cards/cards.pug',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
