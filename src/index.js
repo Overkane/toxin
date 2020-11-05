@@ -1,38 +1,12 @@
-import 'Components/color-square/color-square.scss';
-import 'Components/text-field/text-field.scss';
-import 'Components/text-field/text-field.js';
-import 'Components/toggle/toggle.scss';
-import 'Components/dropdown/dropdown.scss';
-import 'Components/dropdown/dropdown.js';
-import 'Components/info-card/info-card.scss';
-import 'Components/info-card/city.svg';
-import 'Components/info-card/emoticon.svg';
-import 'Components/radio/radio.scss';
-import 'Components/button/button.scss';
-import 'Components/rate-button/rate-button.scss';
-import 'Components/like-button/like-button.scss';
-import 'Components/like-button/like-button.js';
-import 'Components/pagination/pagination.scss';
-import 'Components/pagination/pagination.js';
-import 'Components/customer-review/customer-review.scss';
-import 'Components/customer-review/customer1-photo.jpg';
-import 'Components/date-dropdown/date-dropdown.scss';
-import 'Components/date-dropdown/date-dropdown.js';
-import 'Components/range-slider/range-slider.scss';
-import 'Components/range-slider/range-slider.js';
-import 'Components/checkbox/checkbox.scss';
-import 'Components/checkbox/checkbox-flag.svg';
-import 'Components/checkbox-list/checkbox-list.scss';
-import 'Components/checkbox-list/checkbox-list.js';
-import 'Components/bullet-list/bullet-list.scss';
-import 'Components/bullet-list/bullet.svg';
-import 'Components/welcome-form/welcome-form.scss';
-import 'Components/sign-up-form/sign-up-form.scss';
-import 'Components/sign-in-form/sign-in-form.scss';
-import 'Components/room-book-form/room-book-form.scss';
-import 'Includes/ui-kit-header/ui-kit-header.scss';
-import 'Includes/ui-kit-header/logo.svg';
-import 'Pages/ui-kit/form-elements/form-elements.scss';
-import 'Pages/ui-kit/colors-type/colors-type.scss';
-import 'Pages/ui-kit/cards/cards.scss';
+const components = require.context('Components', true, /\.scss$|\.js$/);
+const includes = require.context('Includes', true, /\.scss$/);
+const pages = require.context('Pages', true, /\.scss$|\.js$/);
+
+importAll(components);
+importAll(includes);
+importAll(pages);
 import './styles.scss';
+
+function importAll(r) {
+  r.keys().forEach(r);
+}
