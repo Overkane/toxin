@@ -56,8 +56,13 @@ mixin room-book-form
 
   form.room-book-form(action='')
     .room-book-form__header
-      .room-book-form__room-info № 888 люкс
-      .room-book-form__room-price 9 990₽ в сутки
+      .room-book-form__room-info.
+        #[span.room-book-form__room-number-sign №]
+        #[span.room-book-form__room-number 888]
+        #[span.room-book-form__room-type Люкс]
+      .room-book-form__room-price 
+        span.room-book-form__room-cost 9 990₽
+        | в сутки
     .room-book-form__dates
       +date-dropdown(arrive)
       +date-dropdown(depart)

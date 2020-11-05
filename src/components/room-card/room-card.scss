@@ -1,0 +1,120 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+@import '/node_modules/slick-carousel/slick/slick.css';
+
+.room-card {
+  background: #ffffff;
+  border-radius: 4px;
+  width: 270px;
+  box-shadow: 0 10px 20px colors.$dark-shade5;
+
+  &__room-images {
+    position: relative;
+
+    .slick-dots {
+      position: absolute;
+      right: 15px;
+      bottom: 18.75px;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-right: 3.75px;
+        padding: 0;
+        width: 7.5px;
+        height: 7.5px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      button {
+        box-sizing: border-box;
+        display: block;
+        outline: none;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        padding: 0;
+        width: 7.5px;
+        height: 7.5px;
+        font-size: 0;
+        line-height: 0;
+        color: transparent;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      li.slick-active button,
+      li:hover button {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__room-info {
+    padding: 20px 17px 19px 20px;
+  }
+
+  &__room-info-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__room-name {
+  }
+
+  &__room-number-sign {
+    @include mixins.h2-text;
+    font-size: 14px;
+  }
+
+  &__room-number {
+    @include mixins.h2-text;
+  }
+
+  &__room-type {
+    @include mixins.room-type;
+  }
+
+  &__room-price-per-day {
+    @include mixins.body;
+    font-size: 12px;
+    color: colors.$dark-shade50;
+  }
+
+  &__room-price {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__room-info-divider {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    border: 0;
+    height: 1px;
+    background-color: colors.$dark-shade10;
+  }
+
+  &__room-info-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__room-review-count {
+    @include mixins.body;
+    color: colors.$dark-shade50;
+  }
+
+  &__review-count {
+    @include mixins.body;
+    font-weight: bold;
+    color: colors.$dark-shade50;
+  }
+}

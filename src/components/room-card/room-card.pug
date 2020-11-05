@@ -1,0 +1,21 @@
+include ~Components/rate-button/rate-button.pug
+
+mixin room-card(room)
+  .room-card
+    .room-card__room-images
+      each img in room.images
+        .room-card__room-image 
+          img(src=img, alt='')
+    .room-card__room-info
+      .room-card__room-info-top
+        .room-card__room-name.
+          #[span.room-card__room-number-sign №]
+          #[span.room-card__room-number= room.number]
+          #[span.room-card__room-type= room.isLuxury ? "Люкс" : ""]
+        .room-card__room-price-per-day.
+          #[span.room-card__room-price #{room.price.toLocaleString()}₽] в сутки
+      hr.room-card__room-info-divider
+      .room-card__room-info-bottom
+        +rate-button('room'+room.number+'-rating', room.rateCount)
+        .room-card__room-review-count.
+          #[span.room-card__review-count #{room.reviewCount}] Отзывов

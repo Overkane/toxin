@@ -3,10 +3,33 @@ include ~Components/welcome-form/welcome-form.pug
 include ~Components/sign-up-form/sign-up-form.pug
 include ~Components/sign-in-form/sign-in-form.pug
 include ~Components/room-book-form/room-book-form.pug
+include ~Components/room-card/room-card.pug
 
 block content
+  -
+    room888 = {
+      number: 888,
+      isLuxury: true,
+      images: ['/img/room888.jpg', '/img/room888.jpg', '/img/room888.jpg', '/img/room888.jpg'],
+      price: 9990,
+      rateCount: 5,
+      reviewCount: 145
+    }
+    room840 = {
+      number: 840,
+      isLuxury: false,
+      images: ['/img/room840.jpg', '/img/room840.jpg', '/img/room840.jpg', '/img/room840.jpg'],
+      price: 9900,
+      rateCount: 4,
+      reviewCount: 65
+    }
+
   .cards
     +welcome-form
     +sign-up-form
     +room-book-form
     +sign-in-form
+    div(style='position: absolute;left: 980px;top: 559px;')
+      +room-card(room888)
+    div(style='position: absolute;left: 980px;top: 856px;')
+      +room-card(room840)
