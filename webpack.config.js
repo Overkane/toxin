@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -68,8 +69,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'img',
+              name: 'img/[name].[ext]',
             },
           },
         ],
@@ -81,9 +81,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              publicPath: 'fonts',
-              outputPath: 'fonts',
+              name: 'fonts/[name].[ext]',
             },
           },
         ],
@@ -112,6 +110,20 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/**/*.jpg',
+          to: 'img',
+          flatten: true,
+        },
+        {
+          from: 'src/**/*.svg',
+          to: 'img',
+          flatten: true,
+        },
+      ],
     }),
   ],
 };
