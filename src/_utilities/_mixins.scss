@@ -2,7 +2,7 @@
 @use '~Utilities/fonts';
 
 @mixin h1-text {
-  font-family: fonts.$open-sans;
+  font-family: fonts.$montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -10,7 +10,7 @@
 }
 
 @mixin h2-text {
-  font-family: fonts.$open-sans;
+  font-family: fonts.$montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;

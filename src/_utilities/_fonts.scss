@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Open Sans';
-  src: url('~Fonts/OpenSans-Bold.woff2') format('woff2'),
-    url('~Fonts/OpenSans-Bold.woff') format('woff'),
-    url('~Fonts/OpenSans-Bold.ttf') format('truetype'),
-    url('~Fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Open Sans';
-  src: url('~Fonts/OpenSans-Regular.woff2') format('woff2'),
-    url('~Fonts/OpenSans-Regular.woff') format('woff'),
-    url('~Fonts/OpenSans-Regular.ttf') format('truetype'),
-    url('~Fonts/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Montserrat';
   src: url('~Fonts/Montserrat-Bold.woff2') format('woff2'),
     url('~Fonts/Montserrat-Bold.woff') format('woff'),
@@ -46,7 +28,6 @@
 }
 
 $montserrat: 'Montserrat', sans-serif;
-$open-sans: 'Open Sans', sans-serif;
 
 @mixin material-icons {
   font-family: 'Material Icons';
