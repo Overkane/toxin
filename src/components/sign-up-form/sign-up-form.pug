@@ -6,13 +6,11 @@ include ~Components/text-field/text-field.pug
 mixin sign-up-form
   -
     nameField = {
-      id: 'name',
-      label: '',
+      id: 'sign-up-form__name',
       placeholder: 'Имя'
     },
     surnameField = {
-      id: 'surname',
-      label: '',
+      id: 'sign-up-form__surname',
       placeholder: 'Фамилия'
     },
     radioMan = {
@@ -28,18 +26,17 @@ mixin sign-up-form
       checked: false
     },
     bornDate = {
-      id: 'bornDate',
+      id: 'sign-up-form__bornDate',
       label: 'Дата рождения',
       placeholder: 'ДД.ММ.ГГГГ'
     },
     email = {
-      id: 'email',
+      id: 'sign-up-form__email',
       label: 'Данные для входа в сервис',
       placeholder: 'Email'
     },
     password = {
-      id: 'password',
-      label: '',
+      id: 'sign-up-form__password',
       placeholder: 'Пароль'
     },
     mailing = {

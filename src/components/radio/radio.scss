@@ -2,6 +2,9 @@
 @use 'Utilities/mixins';
 
 .radio {
+  padding-top: 0.44px;
+  padding-bottom: 3.56px;
+
   &__wrapper {
     @include mixins.body;
     display: inline-flex;

@@ -1,5 +1,12 @@
 .cards {
   display: grid;
-  margin: 72px 0 140px 140px;
+  grid-template-columns: 380px 380px 320px;
   gap: 40px;
+  margin: 72px 0 140px 140px;
+
+  &__column {
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: 40px 0;
+  }
 }

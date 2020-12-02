@@ -25,11 +25,13 @@ block content
     }
 
   .cards
-    +welcome-form
-    +sign-up-form
-    +room-book-form
-    +sign-in-form
-    div(style='position: absolute;left: 980px;top: 559px;')
+    .cards__column
+      +welcome-form
+      +sign-up-form
+    .cards__column
+      +room-book-form
+      +sign-in-form
+    .cards__column
+      +calendar
       +room-card(room888)
-    div(style='position: absolute;left: 980px;top: 856px;')
       +room-card(room840)

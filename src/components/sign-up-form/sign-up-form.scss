@@ -6,6 +6,7 @@
 
   &__title {
     @include mixins.h1-text;
+    line-height: 29.26px;
   }
 
   &__username {
@@ -17,12 +18,13 @@
   &__gender-radio-group {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
     gap: 20px;
   }
 
   &__born-date {
-    margin-top: 20px;
+    margin-top: 19.56px;
   }
 
   &__sign-up-info {

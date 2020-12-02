@@ -8,12 +8,12 @@
 
   &__label {
     @include mixins.h3-text;
+    margin-bottom: 5px;
   }
 
   &__input-wrapper {
     box-sizing: border-box;
     display: flex;
-    margin-top: 5px;
     border: 1px solid colors.$dark-shade25;
     border-radius: 4px;
     width: 267px;
@@ -22,7 +22,6 @@
   &__input {
     position: relative;
     box-sizing: border-box;
-    margin-top: 5px;
     border: 1px solid colors.$dark-shade25;
     border-radius: 4px;
     padding: 13px 14px 13px;

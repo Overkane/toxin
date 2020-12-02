@@ -1,6 +1,7 @@
 mixin text-field(textField={})
   .text-field
-    label.text-field__label(for=textField.id)= textField.label
+    if textField.label !== undefined
+      label.text-field__label(for=textField.id)= textField.label
     input.text-field__input(
       type='text',
       id=textField.id,
@@ -10,7 +11,8 @@ mixin text-field(textField={})
 
 mixin text-field-focused(textField={})
   .text-field
-    label.text-field__label(for=textField.id)= textField.label
+    if textField.label !== undefined
+      label.text-field__label(for=textField.id)= textField.label
     input.text-field__input.text-field__input_focused(
       type='text',
       id=textField.id,
@@ -20,7 +22,8 @@ mixin text-field-focused(textField={})
 
 mixin text-field-email(textField={})
   form.text-field
-    label.text-field__label(for=textField.id)= textField.label
+    if textField.label !== undefined
+      label.text-field__label(for=textField.id)= textField.label
     .text-field__input-wrapper
       input.text-field__input.text-field__input_email(
         type='email',
@@ -33,7 +36,8 @@ mixin text-field-email(textField={})
 mixin text-field-masked(textField={}, alias="date")
   - const inputmask = '"alias": ' + '"' + alias + '"';
   .text-field
-    label.text-field__label(for=textField.id)= textField.label
+    if textField.label !== undefined
+      label.text-field__label(for=textField.id)= textField.label
     input.text-field__input(
       type='text',
       id=textField.id,

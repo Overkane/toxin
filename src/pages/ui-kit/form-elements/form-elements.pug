@@ -26,7 +26,7 @@ block content
     +text-field(textField)
 
   //- Text field focused
-  div(style='position: absolute;left: 141px;top: 227px;')
+  div(style='position: absolute;left: 141px;top: 227.44px;')
     -
       textFieldFocused = {
         id: 'text-field-focused',
@@ -34,16 +34,6 @@ block content
         value: 'This is pretty awesome'
       }
     +text-field-focused(textFieldFocused)
-
-  //- Text field masked
-  div(style='position: absolute;left: 141px;top: 395px;')
-    -
-      textFieldMasked = {
-        id: 'text-field-masked',
-        label: 'Masked text field',
-        placeholder: 'ДД.ММ.ГГГГ'
-      }
-    +text-field-masked(textFieldMasked)
 
   //- Dropdown
   div(style='position: absolute;left: 141px;top: 311px;')
@@ -54,6 +44,16 @@ block content
         placeholder: 'Сколько гостей'
       }
     +dropdown(dropdown)
+
+  //- Text field masked
+  div(style='position: absolute;left: 141px;top: 395px;')
+    -
+      textFieldMasked = {
+        id: 'text-field-masked',
+        label: 'Masked text field',
+        placeholder: 'ДД.ММ.ГГГГ'
+      }
+    +text-field-masked(textFieldMasked)
 
   //- Checkbox
   div(style='position: absolute;left: 587px;top: 143px;')

@@ -6,6 +6,7 @@
 
   &__title {
     @include mixins.h1-text;
+    line-height: 29.26px;
   }
 
   &__dates {
@@ -15,7 +16,7 @@
   }
 
   &__guests {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   &__submit-button {
