@@ -4,6 +4,7 @@ include ~Components/checkbox-list/checkbox-list.pug
 include ~Components/radio/radio.pug
 include ~Components/toggle/toggle.pug
 include ~Components/button/button.pug
+include ~Components/text-button/text-button.pug
 include ~Components/bullet-list/bullet-list.pug
 include ~Components/info-card/info-card.pug
 include ~Components/like-button/like-button.pug
@@ -164,12 +165,12 @@ block content
       legend.button-group__title Buttons
       .button-group__group
         +button('Click me')
-        +button-disabled('Click me')
-        +button-border('Click me')
-        +button-border-disabled('Click me')
+        +button-hovered('Click me')
+        +button-empty('Click me')
+        +button-empty-hovered('Click me')
   .button-group__group(style='position: absolute;left: 980px;top: 411px;')
-    +button-simple('Click me')
-    +button-simple-dark('Click me')
+    +text-button('Click me')
+    +text-button-hovered('Click me')
   .div(style='position: absolute;left: 979px;top: 456px;')
     +button-big('Перейти к оплате')
 

@@ -108,6 +108,10 @@ module.exports = {
       filename: 'ui-kit/cards.html',
       template: './src/pages/ui-kit/cards/cards.pug',
     }),
+    new HTMLWebpackPlugin({
+      filename: 'ui-kit/headers-footers.html',
+      template: './src/pages/ui-kit/headers-footers/headers-footers.pug',
+    }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
@@ -115,6 +119,11 @@ module.exports = {
       patterns: [
         {
           from: 'src/**/*.jpg',
+          to: 'img',
+          flatten: true,
+        },
+        {
+          from: 'src/**/*.png',
           to: 'img',
           flatten: true,
         },

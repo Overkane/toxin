@@ -1,0 +1,16 @@
+@use 'Utilities/colors';
+@use 'Utilities/mixins';
+
+.text-button {
+  @include mixins.h3-text;
+
+  padding: 0;
+  line-height: 15px;
+  color: colors.$purple;
+  cursor: pointer;
+
+  &:hover,
+  &_hovered {
+    color: colors.$dark-shade50;
+  }
+}

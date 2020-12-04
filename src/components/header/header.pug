@@ -1,0 +1,24 @@
+include ~Components/button/button.pug
+
+mixin header
+  .header
+    .header__logo
+      img.header__logo-img(src='/img/header-logo.png', alt='header logo')
+    nav.header__nav
+      ul.header__nav-item-list
+        li.header__nav-item
+          a.header__nav-link.header__nav-link_active(href='/about-us.html') О нас
+        li.header__nav-item
+          a.header__nav-link(href='') Услуги
+        li.header__nav-item
+          a.header__nav-link(href='/vacancies.html') Вакансии
+        li.header__nav-item
+          a.header__nav-link(href='/news.html') Новости
+        li.header__nav-item
+          a.header__nav-link(href='') Соглашения
+        li.header__nav-item
+          a.header__nav-link(href='/news.html')
+            +button-empty-small("Войти")
+        li.header__nav-item
+          a.header__nav-link(href='/news.html')
+            +button-small("Зарегистрироваться")

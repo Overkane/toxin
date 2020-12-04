@@ -1,0 +1,48 @@
+@use '~Utilities/mixins';
+@use '~Utilities/colors';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 140px;
+
+  &__logo {
+  }
+
+  &__logo-img {
+  }
+
+  &__nav {
+  }
+
+  &__nav-item-list {
+    @include mixins.default-list-styling;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__nav-item {
+  }
+
+  &__nav-link {
+    @include mixins.default-link-styling;
+
+    &:link {
+      color: colors.$dark-shade50;
+    }
+
+    &_active:link {
+      font-weight: bold;
+      color: colors.$dark-shade75;
+    }
+  }
+
+  &__sign-up-button {
+  }
+
+  &__sign-in-button {
+  }
+}

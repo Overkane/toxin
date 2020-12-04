@@ -1,27 +1,26 @@
 mixin button(label)
-  button.button
+  button.button= label
+
+mixin button-hovered(label)
+  button.button.button_hovered= label
+
+mixin button-empty(label)
+  button.button.button_empty
+    span.button__filler
     span.button__label= label
 
-mixin button-disabled(label)
-  button.button.button_disabled
+mixin button-empty-small(label)
+  button.button.button_empty.button_small
+    span.button__filler
     span.button__label= label
 
-mixin button-border(label)
-  button.button.button_border
+mixin button-empty-hovered(label)
+  button.button.button_empty.button_hovered
+    span.button__filler
     span.button__label= label
 
-mixin button-border-disabled(label)
-  button.button.button_border.button_disabled
-    span.button__label= label
-
-mixin button-simple(label)
-  button.button.button_simple
-    span.button__label= label
-
-mixin button-simple-dark(label)
-  button.button.button_simple.button_dark
-    span.button__label= label
+mixin button-small(label)
+  button.button.button_small= label
 
 mixin button-big(label)
-  button.button.button_big
-    span.button__label= label
+  button.button.button_big= label
